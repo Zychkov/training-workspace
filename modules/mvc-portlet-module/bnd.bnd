@@ -1,0 +1,4 @@
+Bundle-Name: mvc-portlet-module
+Bundle-SymbolicName: ru.zychkov.training.portletmodule.portlet
+Bundle-Version: 1.0.0
+Export-Package: ru.zychkov.training.portletmodule.portlet.constants
