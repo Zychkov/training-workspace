@@ -37,6 +37,53 @@ public class AssignmentServiceUtil {
 	 *
 	 * Never modify this class directly. Add custom service methods to <code>ru.zychkov.training.gradebook.service.impl.AssignmentServiceImpl</code> and rerun ServiceBuilder to regenerate this class.
 	 */
+	public static ru.zychkov.training.gradebook.model.Assignment addAssignment(
+			long groupId, java.util.Map<java.util.Locale, String> titleMap,
+			java.util.Map<java.util.Locale, String> descriptionMap,
+			java.util.Date dueDate,
+			com.liferay.portal.kernel.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException {
+
+		return getService().addAssignment(
+			groupId, titleMap, descriptionMap, dueDate, serviceContext);
+	}
+
+	public static ru.zychkov.training.gradebook.model.Assignment
+			deleteAssignment(long assignmentId)
+		throws com.liferay.portal.kernel.exception.PortalException {
+
+		return getService().deleteAssignment(assignmentId);
+	}
+
+	public static ru.zychkov.training.gradebook.model.Assignment getAssignment(
+			long assignmentId)
+		throws com.liferay.portal.kernel.exception.PortalException {
+
+		return getService().getAssignment(assignmentId);
+	}
+
+	public static java.util.List<ru.zychkov.training.gradebook.model.Assignment>
+		getAssignmentsByGroupId(long groupId) {
+
+		return getService().getAssignmentsByGroupId(groupId);
+	}
+
+	public static java.util.List<ru.zychkov.training.gradebook.model.Assignment>
+		getAssignmentsByKeywords(
+			long groupId, String keywords, int start, int end,
+			com.liferay.portal.kernel.util.OrderByComparator
+				<ru.zychkov.training.gradebook.model.Assignment>
+					orderByComparator) {
+
+		return getService().getAssignmentsByKeywords(
+			groupId, keywords, start, end, orderByComparator);
+	}
+
+	public static long getAssignmentsCountByKeywords(
+		long groupId, String keywords) {
+
+		return getService().getAssignmentsCountByKeywords(groupId, keywords);
+	}
 
 	/**
 	 * Returns the OSGi service identifier.
@@ -45,6 +92,19 @@ public class AssignmentServiceUtil {
 	 */
 	public static String getOSGiServiceIdentifier() {
 		return getService().getOSGiServiceIdentifier();
+	}
+
+	public static ru.zychkov.training.gradebook.model.Assignment
+			updateAssignment(
+				long assignmentId,
+				java.util.Map<java.util.Locale, String> titleMap,
+				java.util.Map<java.util.Locale, String> descriptionMap,
+				java.util.Date dueDate,
+				com.liferay.portal.kernel.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException {
+
+		return getService().updateAssignment(
+			assignmentId, titleMap, descriptionMap, dueDate, serviceContext);
 	}
 
 	public static AssignmentService getService() {

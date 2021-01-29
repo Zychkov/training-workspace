@@ -20,6 +20,7 @@
 
  <%@ page import="ru.zychkov.training.gradebook.model.Assignment"%>
  <%@ page import="ru.zychkov.training.gradebook.web.constants.MVCCommandNames"%>
+<%@ page import="com.liferay.portal.kernel.servlet.SessionErrors"%>
 
  <liferay-frontend:defineObjects />
 

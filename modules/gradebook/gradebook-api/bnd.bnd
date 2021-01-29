@@ -1,10 +1,12 @@
 Bundle-Name: gradebook-api
 Bundle-SymbolicName: ru.zychkov.training.gradebook.api
 Bundle-Version: 1.0.0
-Export-Package:\
-	ru.zychkov.training.gradebook.exception,\
-	ru.zychkov.training.gradebook.model,\
-	ru.zychkov.training.gradebook.service,\
-	ru.zychkov.training.gradebook.service.persistence
+Export-Package: \
+        ru.zychkov.training.gradebook.constants,\
+    	ru.zychkov.training.gradebook.exception,\
+    	ru.zychkov.training.gradebook.model,\
+    	ru.zychkov.training.gradebook.service,\
+    	ru.zychkov.training.gradebook.service.persistence, \
+        ru.zychkov.training.gradebook.validator
 -check: EXPORTS
 -includeresource: META-INF/service.xml=../gradebook-service/service.xml
