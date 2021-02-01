@@ -24,6 +24,7 @@ import javax.portlet.RenderResponse;
 
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
+import ru.zychkov.training.gradebook.web.internal.security.permission.resource.AssignmentPermission;
 
 /**
  * MVC command for showing the assignments list.
@@ -52,6 +53,8 @@ public class ViewAssignmentsMVCRenderCommand implements MVCRenderCommand {
         // Add Clay management toolbar related attributes.
 
         addManagementToolbarAttributes(renderRequest, renderResponse);
+
+        renderRequest.setAttribute("assignmentPermission", _assignmentPermission);
 
         return "/view.jsp";
     }
@@ -147,4 +150,7 @@ public class ViewAssignmentsMVCRenderCommand implements MVCRenderCommand {
 
     @Reference
     private Portal _portal;
+
+    @Reference
+    protected AssignmentPermission _assignmentPermission;
 }
