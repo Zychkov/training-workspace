@@ -61,6 +61,8 @@ public class AssignmentsManagementToolbarDisplayContext
      */
     public CreationMenu getCreationMenu() {
 
+        // Check if user has permissions to add assignments.
+
         if (!AssignmentTopLevelPermission.contains(
                 _themeDisplay.getPermissionChecker(),
                 _themeDisplay.getScopeGroupId(), "ADD_ENTRY")) {

@@ -1,4 +1,4 @@
-<%@ include file="/init.jsp"%>
+<%@ include file="../init.jsp"%>
 
 <%
     AssetRenderer<?> assetRenderer = (AssetRenderer<?>)request.getAttribute(WebKeys.ASSET_RENDERER);

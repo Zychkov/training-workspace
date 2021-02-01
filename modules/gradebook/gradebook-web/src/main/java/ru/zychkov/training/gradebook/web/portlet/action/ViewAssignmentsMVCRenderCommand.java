@@ -15,6 +15,7 @@ import ru.zychkov.training.gradebook.service.AssignmentService;
 import ru.zychkov.training.gradebook.web.constants.GradebookPortletKeys;
 import ru.zychkov.training.gradebook.web.constants.MVCCommandNames;
 import ru.zychkov.training.gradebook.web.display.context.AssignmentsManagementToolbarDisplayContext;
+import ru.zychkov.training.gradebook.web.internal.security.permission.resource.AssignmentPermission;
 
 import java.util.List;
 
@@ -24,7 +25,6 @@ import javax.portlet.RenderResponse;
 
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
-import ru.zychkov.training.gradebook.web.internal.security.permission.resource.AssignmentPermission;
 
 /**
  * MVC command for showing the assignments list.
@@ -53,6 +53,8 @@ public class ViewAssignmentsMVCRenderCommand implements MVCRenderCommand {
         // Add Clay management toolbar related attributes.
 
         addManagementToolbarAttributes(renderRequest, renderResponse);
+
+        // Add permission checker.
 
         renderRequest.setAttribute("assignmentPermission", _assignmentPermission);
 
@@ -146,11 +148,11 @@ public class ViewAssignmentsMVCRenderCommand implements MVCRenderCommand {
     }
 
     @Reference
+    protected AssignmentPermission _assignmentPermission;
+
+    @Reference
     protected AssignmentService _assignmentService;
 
     @Reference
     private Portal _portal;
-
-    @Reference
-    protected AssignmentPermission _assignmentPermission;
 }
