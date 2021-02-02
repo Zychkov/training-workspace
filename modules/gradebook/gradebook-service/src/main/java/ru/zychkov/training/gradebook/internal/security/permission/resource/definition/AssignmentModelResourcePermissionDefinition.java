@@ -62,7 +62,7 @@ public class AssignmentModelResourcePermissionDefinition
         modelResourcePermissionLogicConsumer.accept(
                 new StagedModelPermissionLogic<>(
                         _stagingPermission,
-                        "com_liferay_training_gradebook_web_portlet_GradebookPortlet",
+                        "ru_zychkov_training_gradebook_web_portlet_GradebookPortlet",
                         Assignment::getAssignmentId));
 
         // Only enable if you use (optional) workflow support
