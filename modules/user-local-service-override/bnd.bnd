@@ -1,0 +1,3 @@
+Bundle-Name: user-local-service-override
+Bundle-SymbolicName: ru.zychkov.training.user.service
+Bundle-Version: 1.0.0
