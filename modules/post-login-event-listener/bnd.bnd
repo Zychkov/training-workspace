@@ -1,0 +1,3 @@
+Bundle-Name: post-login-event-listener
+Bundle-SymbolicName: ru.zychkov.training.login.event.post
+Bundle-Version: 1.0.0
